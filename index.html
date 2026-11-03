@@ -1,0 +1,772 @@
+<!DOCTYPE html>
+<html lang="fr" data-theme="indigo">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Juan Davids Haminarivo — Développeur web full-stack</title>
+  <meta name="description" content="Portfolio de Ny Mandresy Juan Davids HAMINARIVO, développeur web full-stack à Antananarivo : sites, applications web et mobiles avec React, Laravel, Django, React Native et Flutter.">
+  <meta name="author" content="Ny Mandresy Juan Davids HAMINARIVO">
+  <meta name="theme-color" content="#0b0e13">
+  <link rel="canonical" href="https://atlas-idev.github.io/">
+
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://atlas-idev.github.io/">
+  <meta property="og:title" content="Juan Davids Haminarivo — Développeur web full-stack">
+  <meta property="og:description" content="Code, design & intégration. Sites, applications web et mobiles, de la maquette Figma à la mise en ligne.">
+  <meta property="og:image" content="https://atlas-idev.github.io/assets/og-image.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:locale" content="fr_FR">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="icon" href="assets/icons/favicon-32.png" sizes="32x32" type="image/png">
+  <link rel="apple-touch-icon" href="assets/icons/apple-touch-icon.png">
+  <link rel="manifest" href="site.webmanifest">
+
+  <link rel="preload" href="assets/fonts/Archivo-normal-100_900.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" as="image" href="assets/img/hero.jpg" media="(min-width: 801px)">
+  <link rel="preload" as="image" href="assets/img/hero-sm.jpg" media="(max-width: 800px)">
+  <link rel="stylesheet" href="css/fonts.css">
+  <link rel="stylesheet" href="css/style.css">
+
+  <script>
+    (function (d) {
+      var c = d.classList;
+      c.add("js");
+      var seen = false;
+      try { seen = sessionStorage.getItem("jh-loaded") === "1"; } catch (e) {}
+      if (seen || location.hash.length > 1 || window.matchMedia("(prefers-reduced-motion: reduce)").matches) c.add("no-loader", "is-ready");
+      setTimeout(function () { c.add("is-ready"); }, 4000);
+    })(document.documentElement);
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Ny Mandresy Juan Davids HAMINARIVO",
+    "jobTitle": "Développeur web full-stack",
+    "email": "mailto:jhaminarivo@gmail.com",
+    "telephone": "+261343977592",
+    "address": { "@type": "PostalAddress", "addressLocality": "Antananarivo", "addressCountry": "MG" },
+    "alumniOf": "ESTI Antananarivo",
+    "worksFor": { "@type": "Organization", "name": "Aylmara", "url": "https://aylmara.com" },
+    "sameAs": ["https://github.com/Atlas-idev"],
+    "knowsAbout": ["React", "JavaScript", "Laravel", "PHP", "Django", "Python", "React Native", "Flutter", "WordPress", "PostgreSQL", "Figma"]
+  }
+  </script>
+</head>
+<body>
+
+  <!-- Icônes SVG réutilisables -->
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true">
+    <symbol id="logo" viewBox="0 0 64 64">
+      <g fill="none" stroke-width="7.5" transform="translate(3.5 -1)">
+        <path d="M26 8V44a10 10 0 0 1-10 10H8" stroke="currentColor"/>
+        <path d="M46 8V58" stroke="currentColor"/>
+        <path d="M29.75 31H42.25" style="stroke: var(--accent)"/>
+      </g>
+    </symbol>
+    <symbol id="i-arrow-ur" viewBox="0 0 24 24"><path d="M7 17 17 7M8 7h9v9" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="i-arrow-r" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="i-arrow-up" viewBox="0 0 24 24"><path d="M12 19V5M6 11l6-6 6 6" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="i-download" viewBox="0 0 24 24"><path d="M12 4v11M7 10l5 5 5-5M5 20h14" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="i-mail" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="m4 7 8 6 8-6" fill="none" stroke="currentColor" stroke-width="1.6"/></symbol>
+    <symbol id="i-phone" viewBox="0 0 24 24"><path d="M6.6 3h2.8l1.4 4.2-2 1.4a12 12 0 0 0 6.6 6.6l1.4-2 4.2 1.4v2.8A2.6 2.6 0 0 1 18.4 20 15.4 15.4 0 0 1 4 5.6 2.6 2.6 0 0 1 6.6 3Z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></symbol>
+    <symbol id="i-pin" viewBox="0 0 24 24"><path d="M12 21s-7-6.2-7-11.5a7 7 0 0 1 14 0C19 14.8 12 21 12 21Z" fill="none" stroke="currentColor" stroke-width="1.6"/><circle cx="12" cy="9.5" r="2.5" fill="none" stroke="currentColor" stroke-width="1.6"/></symbol>
+    <symbol id="i-github" viewBox="0 0 24 24"><path fill="currentColor" d="M12 2a10 10 0 0 0-3.2 19.5c.5.1.7-.2.7-.5v-1.7c-2.8.6-3.4-1.2-3.4-1.2-.4-1.2-1.1-1.5-1.1-1.5-.9-.6.1-.6.1-.6 1 .1 1.5 1 1.5 1 .9 1.5 2.4 1.1 3 .8.1-.6.3-1.1.6-1.3-2.2-.3-4.6-1.1-4.6-5 0-1.1.4-2 1-2.7-.1-.3-.4-1.3.1-2.7 0 0 .8-.3 2.8 1a9.6 9.6 0 0 1 5 0c1.9-1.3 2.8-1 2.8-1 .5 1.4.2 2.4.1 2.7.6.7 1 1.6 1 2.7 0 3.9-2.4 4.7-4.6 5 .4.3.7.9.7 1.9V21c0 .3.2.6.7.5A10 10 0 0 0 12 2Z"/></symbol>
+  </svg>
+
+  <!-- Écran de chargement -->
+  <div class="loader" aria-hidden="true">
+    <div class="loader__center">
+      <svg class="loader__mark" viewBox="0 0 64 64">
+        <g fill="none" stroke-width="7.5" transform="translate(3.5 -1)">
+          <path d="M26 8V44a10 10 0 0 1-10 10H8" pathLength="1"/>
+          <path d="M46 8V58" pathLength="1"/>
+          <path d="M29.75 31H42.25" pathLength="1" class="loader__bar"/>
+        </g>
+      </svg>
+    </div>
+    <div class="loader__foot">
+      <span>Juan Davids Haminarivo — Never give up</span>
+      <span class="loader__count" data-loader-count>000</span>
+    </div>
+  </div>
+
+  <div class="progress" aria-hidden="true"><span></span></div>
+
+  <a class="skip-link" href="#main">Aller au contenu</a>
+
+  <!-- ============ NAVIGATION ============ -->
+  <header class="nav" id="nav">
+    <div class="container nav__inner">
+      <a href="#top" class="brand" aria-label="Haminarivo, retour en haut de page">
+        <svg class="brand__mark" aria-hidden="true"><use href="#logo"/></svg>
+        <span class="brand__name">Haminarivo</span>
+      </a>
+
+      <nav class="nav__links" aria-label="Navigation principale">
+        <a href="#about">À propos</a>
+        <a href="#services">Services</a>
+        <a href="#experience">Parcours</a>
+        <a href="#work">Réalisations</a>
+        <a href="#projects">Projets</a>
+        <a href="#stack">Stack</a>
+      </nav>
+
+      <a href="#contact" class="btn btn--outline btn--sm nav__cta" data-magnetic>
+        Me contacter <svg class="ico"><use href="#i-arrow-r"/></svg>
+      </a>
+
+      <button class="nav__toggle" type="button" aria-expanded="false" aria-controls="mobile-menu" aria-label="Ouvrir le menu">
+        <span></span><span></span>
+      </button>
+    </div>
+
+    <div class="mobile-menu" id="mobile-menu">
+      <nav class="container mobile-menu__inner" aria-label="Navigation mobile">
+        <a href="#about"><span>01</span>À propos</a>
+        <a href="#services"><span>02</span>Services</a>
+        <a href="#experience"><span>03</span>Parcours</a>
+        <a href="#work"><span>04</span>Réalisations</a>
+        <a href="#projects"><span>05</span>Projets</a>
+        <a href="#stack"><span>06</span>Stack</a>
+        <a href="#method"><span>07</span>Méthode</a>
+        <a href="#contact"><span>08</span>Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+
+    <!-- ============ HERO ============ -->
+    <section class="hero" id="top">
+      <div class="hero__media" aria-hidden="true">
+        <picture>
+          <source media="(max-width: 800px)" srcset="assets/img/hero-sm.jpg">
+          <img src="assets/img/hero.jpg" alt="" fetchpriority="high">
+        </picture>
+      </div>
+
+      <div class="container hero__content">
+        <p class="eyebrow hero-in" style="--i:0">Développeur web full-stack — Antananarivo</p>
+
+        <h1 class="hero__title">
+          <span class="line"><span style="--i:1">Code,</span></span>
+          <span class="line"><span style="--i:2">design &amp;</span></span>
+          <span class="line line--serif"><span style="--i:3"><em class="serif">intégration.</em></span></span>
+        </h1>
+
+        <p class="hero__lead hero-in" style="--i:5">
+          Je suis <strong>Ny Mandresy Juan Davids Haminarivo</strong>. Je conçois et développe des sites,
+          des applications web et mobiles, de la maquette Figma jusqu'à la mise en ligne.
+        </p>
+
+        <div class="hero__cta hero-in" style="--i:6">
+          <a href="#work" class="btn btn--primary" data-magnetic>
+            Voir mes réalisations <svg class="ico"><use href="#i-arrow-ur"/></svg>
+          </a>
+          <a href="assets/CV-HAMINARIVO.pdf" class="btn btn--ghost" download data-magnetic>
+            <svg class="ico"><use href="#i-download"/></svg> Télécharger le CV
+          </a>
+        </div>
+      </div>
+
+      <div class="container hero__bottom hero-in" style="--i:7">
+        <ul class="stats" data-stats>
+          <li><strong data-count="8">08</strong><span>Projets réalisés</span></li>
+          <li><strong data-count="19">19</strong><span>Technos &amp; outils</span></li>
+          <li><strong data-count="3" class="no-plus">03</strong><span>Langues parlées</span></li>
+        </ul>
+
+        <div class="hud" aria-label="Informations">
+          <div class="hud__card">
+            <div class="hud__head"><span>Statut</span><span>2026</span></div>
+            <p class="hud__value">Disponible</p>
+            <p class="hud__sub">Freelance · Collaborations</p>
+          </div>
+          <div class="hud__card">
+            <div class="hud__head"><span>Heure locale</span><span>UTC+3</span></div>
+            <p class="hud__value hud__value--mono" data-clock>--:--:--</p>
+            <p class="hud__sub">Antananarivo, Madagascar</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ BANDEAU DÉFILANT ============ -->
+    <div class="marquee" aria-hidden="true">
+      <div class="marquee__track" data-marquee>
+        <div class="marquee__group">
+          <span>Haminarivo</span><svg class="marquee__sep"><use href="#logo"/></svg>
+          <span class="outline">Full-stack</span><svg class="marquee__sep"><use href="#logo"/></svg>
+          <span>Web &amp; Mobile</span><svg class="marquee__sep"><use href="#logo"/></svg>
+          <span class="motto-item">Never give up</span><svg class="marquee__sep"><use href="#logo"/></svg>
+        </div>
+        <div class="marquee__group">
+          <span>Haminarivo</span><svg class="marquee__sep"><use href="#logo"/></svg>
+          <span class="outline">Full-stack</span><svg class="marquee__sep"><use href="#logo"/></svg>
+          <span>Web &amp; Mobile</span><svg class="marquee__sep"><use href="#logo"/></svg>
+          <span class="motto-item">Never give up</span><svg class="marquee__sep"><use href="#logo"/></svg>
+        </div>
+      </div>
+    </div>
+
+    <!-- ============ 01 — À PROPOS ============ -->
+    <section class="section about" id="about">
+      <div class="container">
+        <header class="section__head">
+          <p class="label reveal"><b>01</b><i></i>À propos</p>
+          <h2 class="section__title" data-split>Du besoin métier à l'interface qui <em class="serif">fonctionne.</em></h2>
+        </header>
+
+        <div class="about__grid">
+          <figure class="about__photo reveal-img">
+            <img src="assets/img/portrait-sm.jpg" srcset="assets/img/portrait-sm.jpg 720w, assets/img/portrait.jpg 1200w" sizes="(max-width: 960px) 92vw, 520px" alt="Portrait de Juan Davids Haminarivo en veste marine" loading="lazy" width="1200" height="1200">
+            <figcaption>
+              <span>Ny Mandresy Juan Davids</span>
+              <strong>Haminarivo</strong>
+            </figcaption>
+          </figure>
+
+          <div class="about__body">
+            <p class="about__intro reveal">
+              Étudiant en licence informatique à l'ESTI et développeur en alternance chez Aylmara,
+              je travaille sur toute la chaîne&nbsp;: conception d'interfaces, front-end, back-end,
+              intégration d'API et mise en ligne.
+            </p>
+            <p class="about__text reveal">
+              Sites vitrines, applications web, applications mobiles, contenus CRM&nbsp;: je construis des produits
+              adaptés aux besoins métier, rapides, responsives et faciles à maintenir. J'aime comprendre le
+              métier de mes clients avant d'écrire la première ligne de code.
+            </p>
+
+            <p class="motto reveal"><span class="motto__label">Ma devise</span><span class="motto__text">Never give up.</span></p>
+
+            <dl class="facts reveal">
+              <div><dt>Basé à</dt><dd>Antananarivo, MG</dd></div>
+              <div><dt>Poste actuel</dt><dd>Alternant · Aylmara</dd></div>
+              <div><dt>Formation</dt><dd>Licence info · ESTI</dd></div>
+              <div><dt>Ouvert à</dt><dd>Freelance &amp; collaborations</dd></div>
+            </dl>
+
+            <div class="about__cols">
+              <div class="info reveal">
+                <h3 class="info__title">Formation</h3>
+                <ul class="info__list">
+                  <li>
+                    <strong>Licence informatique</strong>
+                    <span>Intégration &amp; développement · ESTI, Antananarivo</span>
+                    <em>2023 — En cours</em>
+                  </li>
+                  <li>
+                    <strong>Formation de base en robotique</strong>
+                    <span>GasyTech</span>
+                    <em>2025</em>
+                  </li>
+                  <li>
+                    <strong>Lycée Privé Commercial</strong>
+                    <span>L.P.C.</span>
+                    <em>2023</em>
+                  </li>
+                </ul>
+              </div>
+
+              <div class="info reveal" style="--d:.1s">
+                <h3 class="info__title">Langues</h3>
+                <ul class="langs">
+                  <li><span>Malgache</span><em>Langue maternelle</em><i style="--w:100%"></i></li>
+                  <li><span>Français</span><em>B2 · Courant</em><i style="--w:78%"></i></li>
+                  <li><span>Anglais</span><em>B1 · Intermédiaire</em><i style="--w:58%"></i></li>
+                </ul>
+
+                <h3 class="info__title">Atouts</h3>
+                <ul class="chips">
+                  <li>Adaptabilité</li>
+                  <li>Communication</li>
+                  <li>Travail en équipe</li>
+                  <li>Résolution de problèmes</li>
+                  <li>Respect des délais</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ 02 — SERVICES ============ -->
+    <section class="section services" id="services">
+      <div class="container">
+        <header class="section__head section__head--split">
+          <div>
+            <p class="label reveal"><b>02</b><i></i>Services</p>
+            <h2 class="section__title" data-split>Ce que je peux <em class="serif">construire</em> pour vous.</h2>
+          </div>
+          <p class="section__aside reveal">Un seul interlocuteur, du design à la mise en production, pour des projets web et mobiles complets.</p>
+        </header>
+
+        <div class="services__grid">
+          <article class="service reveal">
+            <span class="service__num">01</span>
+            <h3>Sites vitrines &amp; WordPress</h3>
+            <p>Création et refonte de sites rapides, responsives et optimisés pour le référencement naturel.</p>
+            <ul class="service__list"><li>WordPress</li><li>SEO</li><li>Performance</li></ul>
+          </article>
+          <article class="service reveal" style="--d:.06s">
+            <span class="service__num">02</span>
+            <h3>Applications web</h3>
+            <p>Interfaces React, back-end Laravel ou Django, API REST, authentification, rôles et bases de données.</p>
+            <ul class="service__list"><li>React</li><li>Laravel</li><li>Django</li></ul>
+          </article>
+          <article class="service reveal" style="--d:.12s">
+            <span class="service__num">03</span>
+            <h3>Applications mobiles</h3>
+            <p>Applications iOS et Android multiplateformes, connectées à vos API et à vos outils métier.</p>
+            <ul class="service__list"><li>React Native</li><li>Flutter</li><li>Dart</li></ul>
+          </article>
+          <article class="service reveal" style="--d:.18s">
+            <span class="service__num">04</span>
+            <h3>Intégration &amp; contenus CRM</h3>
+            <p>Maquettes Figma transformées en interfaces fidèles, newsletters et campagnes CRM prêtes à l'envoi.</p>
+            <ul class="service__list"><li>Figma</li><li>HTML / CSS</li><li>CRM</li></ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ 03 — PARCOURS ============ -->
+    <section class="section experience" id="experience">
+      <div class="container">
+        <header class="section__head section__head--split">
+          <div>
+            <p class="label reveal"><b>03</b><i></i>Parcours</p>
+            <h2 class="section__title" data-split>Expériences <em class="serif">professionnelles.</em></h2>
+          </div>
+          <p class="section__aside reveal">Alternance, freelance et projets clients&nbsp;: des missions concrètes, de l'analyse jusqu'à la maintenance.</p>
+        </header>
+
+        <ol class="xp">
+          <li class="xp__item reveal">
+            <div class="xp__meta">
+              <span class="xp__num">01</span>
+              <span class="xp__date">Nov. 2025 — En cours</span>
+            </div>
+            <div class="xp__main">
+              <h3 class="xp__company">Aylmara</h3>
+              <p class="xp__role">Développeur web &amp; intégrateur · Alternance</p>
+              <ul class="xp__list">
+                <li>Conception et développement d'applications web et de modules métier, dont la plateforme <strong>Aylmara TaskFlows</strong> (Laravel, React Native, Flutter).</li>
+                <li>Intégration de maquettes Figma en interfaces HTML, CSS et JavaScript responsives, connectées aux API.</li>
+                <li>Réalisation du site <strong>aylmara.com</strong> : design, intégration et mise en ligne.</li>
+                <li>Création de newsletters et campagnes CRM avec les équipes marketing et technique.</li>
+                <li>Analyse des besoins, tests, corrections et maintenance évolutive.</li>
+              </ul>
+            </div>
+            <div class="xp__side">
+              <ul class="tags">
+                <li>Laravel</li><li>React Native</li><li>Flutter</li><li>API</li><li>Figma</li><li>CRM</li>
+              </ul>
+              <a class="link-arrow" href="https://aylmara.com" target="_blank" rel="noopener">aylmara.com <svg class="ico"><use href="#i-arrow-ur"/></svg></a>
+            </div>
+          </li>
+
+          <li class="xp__item reveal">
+            <div class="xp__meta">
+              <span class="xp__num">02</span>
+              <span class="xp__date">2024 — 2026</span>
+            </div>
+            <div class="xp__main">
+              <h3 class="xp__company">Yavoloko.art</h3>
+              <p class="xp__role">Site vitrine WordPress · Création 2024 – 2025 · Refonte 2026</p>
+              <ul class="xp__list">
+                <li>Création du site de la galerie d'art&nbsp;: personnalisation du thème, pages accueil, à propos, œuvres et artistes.</li>
+                <li>Refonte de l'identité visuelle et de la présentation des collections pour valoriser les œuvres.</li>
+                <li>Optimisation du référencement naturel, des performances de chargement et de l'affichage mobile.</li>
+              </ul>
+            </div>
+            <div class="xp__side">
+              <ul class="tags">
+                <li>WordPress</li><li>SEO</li><li>Performance</li><li>Responsive</li>
+              </ul>
+              <a class="link-arrow" href="https://yavoloko.art" target="_blank" rel="noopener">yavoloko.art <svg class="ico"><use href="#i-arrow-ur"/></svg></a>
+            </div>
+          </li>
+
+          <li class="xp__item reveal">
+            <div class="xp__meta">
+              <span class="xp__num">03</span>
+              <span class="xp__date">Avril 2025</span>
+            </div>
+            <div class="xp__main">
+              <h3 class="xp__company">VotreDecennaleFacile.fr</h3>
+              <p class="xp__role">Projet freelance · WordPress</p>
+              <ul class="xp__list">
+                <li>Conception du design, personnalisation du thème WordPress et intégration des contenus.</li>
+                <li>Amélioration de l'expérience utilisateur et mise en place des bases du référencement naturel.</li>
+              </ul>
+            </div>
+            <div class="xp__side">
+              <ul class="tags">
+                <li>WordPress</li><li>UX</li><li>SEO</li>
+              </ul>
+              <a class="link-arrow" href="https://www.votredecennalefacile.fr" target="_blank" rel="noopener">votredecennalefacile.fr <svg class="ico"><use href="#i-arrow-ur"/></svg></a>
+            </div>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- ============ 04 — RÉALISATIONS ============ -->
+    <section class="section work" id="work">
+      <div class="container">
+        <header class="section__head section__head--split">
+          <div>
+            <p class="label reveal"><b>04</b><i></i>Réalisations</p>
+            <h2 class="section__title" data-split>Sites en <em class="serif">production.</em></h2>
+          </div>
+          <p class="section__aside reveal">Des sites conçus, intégrés et mis en ligne pour de vraies entreprises. Cliquez pour les visiter.</p>
+        </header>
+
+        <div class="work__grid">
+          <a class="site-card reveal" href="https://aylmara.com" target="_blank" rel="noopener">
+            <div class="site-card__visual">
+              <span class="site-card__badge">En ligne</span>
+              <img src="assets/logos/aylmara.png" alt="Logo Aylmara" class="site-card__logo site-card__logo--sm" loading="lazy">
+              <span class="site-card__url">aylmara.com</span>
+              <span class="site-card__go" aria-hidden="true"><svg class="ico"><use href="#i-arrow-ur"/></svg></span>
+            </div>
+            <div class="site-card__body">
+              <div class="site-card__meta"><span>01</span><span>Site corporate</span></div>
+              <h3>Aylmara</h3>
+              <p>Externalisation opérationnelle, contenu digital et développement web. Conception, intégration responsive et développement du site de l'entreprise.</p>
+              <ul class="tags"><li>UI design</li><li>Intégration</li><li>Responsive</li><li>SEO</li></ul>
+            </div>
+          </a>
+
+          <a class="site-card reveal" href="https://nlamada.com" target="_blank" rel="noopener" style="--d:.1s">
+            <div class="site-card__visual">
+              <span class="site-card__badge">En ligne</span>
+              <img src="assets/logos/nlamada.png" alt="Logo Next Level Agency" class="site-card__logo" loading="lazy">
+              <span class="site-card__url">nlamada.com</span>
+              <span class="site-card__go" aria-hidden="true"><svg class="ico"><use href="#i-arrow-ur"/></svg></span>
+            </div>
+            <div class="site-card__body">
+              <div class="site-card__meta"><span>02</span><span>Site d'agence</span></div>
+              <h3>Next Level Agency</h3>
+              <p>Agence 360 France × Madagascar&nbsp;: gestion de projet, conseil, CRM, IA et événementiel. Design, intégration et développement du site vitrine.</p>
+              <ul class="tags"><li>UI design</li><li>Intégration</li><li>Responsive</li><li>SEO</li></ul>
+            </div>
+          </a>
+
+          <a class="site-card reveal" href="https://yavoloko.art" target="_blank" rel="noopener">
+            <div class="site-card__visual site-card__visual--dark">
+              <span class="site-card__badge">WordPress</span>
+              <!-- Logo&nbsp;: remplacer par <img src="assets/logos/yavoloko.png" alt="Logo Yavoloko" class="site-card__logo site-card__logo--md"> -->
+              <span class="site-card__wordmark">Yavoloko</span>
+              <span class="site-card__url">yavoloko.art</span>
+              <span class="site-card__go" aria-hidden="true"><svg class="ico"><use href="#i-arrow-ur"/></svg></span>
+            </div>
+            <div class="site-card__body">
+              <div class="site-card__meta"><span>03</span><span>Galerie d'art</span></div>
+              <h3>Yavoloko</h3>
+              <p>Site de la galerie d'art&nbsp;: pages œuvres et artistes, refonte de l'identité visuelle en 2026, SEO et performances mobiles.</p>
+              <ul class="tags"><li>WordPress</li><li>Refonte</li><li>SEO</li><li>Performance</li></ul>
+            </div>
+          </a>
+
+          <a class="site-card reveal" href="https://www.votredecennalefacile.fr" target="_blank" rel="noopener" style="--d:.1s">
+            <div class="site-card__visual site-card__visual--dark">
+              <span class="site-card__badge">WordPress</span>
+              <img src="assets/logos/votredecennalefacile.png" alt="Logo VotreDecennaleFacile" class="site-card__logo site-card__logo--wide" loading="lazy">
+              <span class="site-card__url">votredecennalefacile.fr</span>
+              <span class="site-card__go" aria-hidden="true"><svg class="ico"><use href="#i-arrow-ur"/></svg></span>
+            </div>
+            <div class="site-card__body">
+              <div class="site-card__meta"><span>04</span><span>Assurance BTP</span></div>
+              <h3>VotreDecennaleFacile</h3>
+              <p>Assurance décennale en ligne pour les professionnels du BTP. Design, personnalisation du thème, intégration des contenus et bases du SEO.</p>
+              <ul class="tags"><li>WordPress</li><li>UX</li><li>SEO</li></ul>
+            </div>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ 05 — PROJETS ============ -->
+    <section class="section projects" id="projects">
+      <div class="container">
+        <header class="section__head section__head--split">
+          <div>
+            <p class="label reveal"><b>05</b><i></i>Projets</p>
+            <h2 class="section__title" data-split>Applications &amp; <em class="serif">prototypes.</em></h2>
+          </div>
+          <a class="btn btn--outline reveal" href="https://github.com/Atlas-idev" target="_blank" rel="noopener" data-magnetic>
+            <svg class="ico"><use href="#i-github"/></svg> Voir mon GitHub
+          </a>
+        </header>
+
+        <div class="bento">
+          <!-- TaskFlows -->
+          <article class="project project--feature reveal">
+            <div class="project__visual project__visual--kanban reveal-img" aria-hidden="true">
+              <div class="kanban">
+                <div class="kanban__col">
+                  <p>À faire <b>3</b></p>
+                  <span class="kcard"></span><span class="kcard"></span><span class="kcard kcard--short"></span>
+                </div>
+                <div class="kanban__col">
+                  <p>En cours <b>2</b></p>
+                  <span class="kcard kcard--active"></span><span class="kcard"></span>
+                </div>
+                <div class="kanban__col">
+                  <p>Terminé <b>4</b></p>
+                  <span class="kcard kcard--done"></span><span class="kcard kcard--done"></span><span class="kcard kcard--done kcard--short"></span>
+                </div>
+              </div>
+              <div class="phone">
+                <span class="phone__notch"></span>
+                <span class="phone__row phone__row--title"></span>
+                <span class="phone__row"></span><span class="phone__row phone__row--accent"></span><span class="phone__row"></span>
+              </div>
+              <span class="float-chip float-chip--1">Laravel API</span>
+              <span class="float-chip float-chip--2">React Native</span>
+              <span class="float-chip float-chip--3">Flutter</span>
+            </div>
+            <div class="project__body">
+              <div class="project__meta"><span>Aylmara</span><span>Web · Mobile</span></div>
+              <h3>Aylmara TaskFlows</h3>
+              <p>Plateforme de gestion des tâches et des flux de travail&nbsp;: une API Laravel côté serveur et des applications mobiles en React Native et Flutter pour suivre les projets où que l'on soit.</p>
+              <ul class="project__list">
+                <li>Back-end et API REST avec Laravel (PHP).</li>
+                <li>Applications mobiles multiplateformes en React Native et Flutter (Dart).</li>
+                <li>Suivi des tâches, des statuts et des flux de travail des équipes.</li>
+              </ul>
+              <ul class="tags"><li>Laravel</li><li>PHP</li><li>React Native</li><li>Flutter</li><li>Dart</li><li>API REST</li></ul>
+            </div>
+          </article>
+
+          <!-- SecurIT -->
+          <article class="project reveal">
+            <div class="project__visual reveal-img" aria-hidden="true">
+              <div class="radar">
+                <span class="radar__sweep"></span>
+                <svg class="radar__icon" viewBox="0 0 24 24"><path d="M12 3 4.5 6v5.5c0 4.6 3.2 8.4 7.5 9.5 4.3-1.1 7.5-4.9 7.5-9.5V6L12 3Z" fill="none" stroke="currentColor" stroke-width="1.2"/><path d="m8.8 12 2.2 2.2 4.4-4.4" fill="none" stroke="currentColor" stroke-width="1.2"/></svg>
+                <i class="radar__blip" style="--x:22%;--y:30%"></i>
+                <i class="radar__blip" style="--x:70%;--y:64%;--dl:1.2s"></i>
+              </div>
+            </div>
+            <div class="project__body">
+              <div class="project__meta"><span>2025</span><span>Sécurité</span></div>
+              <h3>SecurIT</h3>
+              <p>Application de signalement et de suivi des incidents de sécurité, avec une interface React et un back-end Django.</p>
+              <ul class="project__list">
+                <li>Tableaux de bord et formulaires de signalement.</li>
+                <li>API Django, authentification et gestion des rôles.</li>
+                <li>Base de données et connexion React / Django.</li>
+              </ul>
+              <ul class="tags"><li>React</li><li>Django</li><li>PostgreSQL</li><li>API</li></ul>
+            </div>
+          </article>
+
+          <!-- ParkMe -->
+          <article class="project reveal" style="--d:.1s">
+            <div class="project__visual project__visual--map reveal-img" aria-hidden="true">
+              <span class="road road--h"></span><span class="road road--v"></span><span class="road road--d"></span>
+              <i class="pin" style="--x:28%;--y:34%">P</i>
+              <i class="pin pin--active" style="--x:58%;--y:58%">P</i>
+              <i class="pin" style="--x:78%;--y:26%">P</i>
+            </div>
+            <div class="project__body">
+              <div class="project__meta"><span>2024</span><span>Réservation</span></div>
+              <h3>ParkMe</h3>
+              <p>Plateforme de réservation de places de parking à Madagascar, avec géolocalisation des emplacements disponibles.</p>
+              <ul class="project__list">
+                <li>Intégration de Google Maps pour localiser les parkings.</li>
+                <li>Parcours&nbsp;: recherche, filtres et confirmation.</li>
+                <li>Gestion des places et réservation en temps réel.</li>
+              </ul>
+              <ul class="tags"><li>Google Maps</li><li>Géolocalisation</li><li>Temps réel</li></ul>
+            </div>
+          </article>
+
+          <!-- Hackathon -->
+          <article class="project reveal" style="--d:.2s">
+            <div class="project__visual project__visual--screens reveal-img" aria-hidden="true">
+              <span class="screen screen--1"></span>
+              <span class="screen screen--2"><svg viewBox="0 0 24 24"><path d="M12 7a2 2 0 1 1 2-2M12 7v2l8.5 6.2a1.5 1.5 0 0 1-.9 2.8H4.4a1.5 1.5 0 0 1-.9-2.8L12 9" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+              <span class="screen screen--3"></span>
+            </div>
+            <div class="project__body">
+              <div class="project__meta"><span>2024</span><span>Hackathon</span></div>
+              <h3>Hackathon interuniversitaire Axian</h3>
+              <p>Conception en équipe d'une plateforme d'essayage en ligne (virtual try-on), présentée devant un jury.</p>
+              <ul class="project__list">
+                <li>Concept et parcours utilisateur en équipe pluridisciplinaire.</li>
+                <li>Maquettes et prototype présentés au pitch final, en temps limité.</li>
+              </ul>
+              <ul class="tags"><li>UX/UI</li><li>Prototypage</li><li>Pitch</li></ul>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ 06 — STACK ============ -->
+    <section class="section stack" id="stack">
+      <div class="container">
+        <header class="section__head section__head--split">
+          <div>
+            <p class="label reveal"><b>06</b><i></i>Stack technique</p>
+            <h2 class="section__title" data-split>Les outils avec lesquels je <em class="serif">construis.</em></h2>
+          </div>
+          <p class="section__aside reveal">Du web au mobile, du front-end à la base de données&nbsp;: une stack polyvalente pour livrer des projets complets.</p>
+        </header>
+
+        <div class="stack__grid">
+          <div class="stack__group reveal">
+            <h3><span>01</span>Front-end</h3>
+            <ul>
+              <li><img src="assets/icons/react.svg" alt="" loading="lazy">React</li>
+              <li><img src="assets/icons/javascript.svg" alt="" loading="lazy">JavaScript</li>
+              <li><img src="assets/icons/html5.svg" alt="" loading="lazy">HTML5</li>
+              <li><img src="assets/icons/css3.svg" alt="" loading="lazy">CSS3</li>
+            </ul>
+          </div>
+          <div class="stack__group reveal" style="--d:.05s">
+            <h3><span>02</span>Back-end</h3>
+            <ul>
+              <li><img src="assets/icons/laravel.svg" alt="" loading="lazy">Laravel</li>
+              <li><img src="assets/icons/php.svg" alt="" loading="lazy">PHP</li>
+              <li><img src="assets/icons/python.svg" alt="" loading="lazy">Python</li>
+              <li><img src="assets/icons/django.svg" alt="" loading="lazy">Django</li>
+              <li><img src="assets/icons/java.svg" alt="" loading="lazy">Java</li>
+              <li><img src="assets/icons/csharp.svg" alt="" loading="lazy">C#</li>
+            </ul>
+          </div>
+          <div class="stack__group reveal" style="--d:.1s">
+            <h3><span>03</span>Mobile</h3>
+            <ul>
+              <li><img src="assets/icons/react.svg" alt="" loading="lazy">React Native</li>
+              <li><img src="assets/icons/flutter.svg" alt="" loading="lazy">Flutter</li>
+              <li><img src="assets/icons/dart.svg" alt="" loading="lazy">Dart</li>
+            </ul>
+          </div>
+          <div class="stack__group reveal">
+            <h3><span>04</span>Données &amp; CMS</h3>
+            <ul>
+              <li><img src="assets/icons/postgresql.svg" alt="" loading="lazy">PostgreSQL</li>
+              <li><img src="assets/icons/wordpress.svg" alt="" loading="lazy">WordPress</li>
+            </ul>
+          </div>
+          <div class="stack__group stack__group--wide reveal" style="--d:.05s">
+            <h3><span>05</span>Design &amp; outils</h3>
+            <ul>
+              <li><img src="assets/icons/figma.svg" alt="" loading="lazy">Figma</li>
+              <li><img src="assets/icons/canva.svg" alt="" loading="lazy">Canva</li>
+              <li><img src="assets/icons/git.svg" alt="" loading="lazy">Git &amp; GitHub</li>
+              <li><span class="stack__glyph" aria-hidden="true">365</span>Office 365</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ 07 — MÉTHODE ============ -->
+    <section class="section method" id="method">
+      <div class="container">
+        <header class="section__head">
+          <p class="label reveal"><b>07</b><i></i>Méthode</p>
+          <h2 class="section__title" data-split>Du brief à la <em class="serif">mise en ligne.</em></h2>
+        </header>
+
+        <ol class="timeline reveal">
+          <li class="step reveal">
+            <span class="step__dot" aria-hidden="true"></span>
+            <span class="step__num">01</span>
+            <h3>Analyser</h3>
+            <p>Comprendre les besoins métier, les utilisateurs et les contraintes techniques.</p>
+          </li>
+          <li class="step reveal" style="--d:.1s">
+            <span class="step__dot" aria-hidden="true"></span>
+            <span class="step__num">02</span>
+            <h3>Concevoir</h3>
+            <p>Parcours utilisateur, maquettes Figma et architecture de la solution.</p>
+          </li>
+          <li class="step reveal" style="--d:.2s">
+            <span class="step__dot" aria-hidden="true"></span>
+            <span class="step__num">03</span>
+            <h3>Développer</h3>
+            <p>Intégration responsive, back-end, API et base de données.</p>
+          </li>
+          <li class="step reveal" style="--d:.3s">
+            <span class="step__dot" aria-hidden="true"></span>
+            <span class="step__num">04</span>
+            <h3>Tester &amp; maintenir</h3>
+            <p>Tests, corrections, SEO, performances et maintenance continue.</p>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- ============ 08 — CONTACT ============ -->
+    <section class="contact" id="contact">
+      <div class="contact__media" aria-hidden="true">
+        <picture>
+          <source media="(max-width: 800px)" srcset="assets/img/contact-sm.jpg">
+          <img src="assets/img/contact.jpg" alt="" loading="lazy">
+        </picture>
+      </div>
+
+      <div class="container contact__inner">
+        <p class="label reveal"><b>08</b><i></i>Contact</p>
+        <h2 class="contact__title" data-split>Un projet en tête&nbsp;? <em class="serif">Parlons-en.</em></h2>
+        <p class="contact__text reveal">Ouvert aux missions freelance, aux collaborations et aux opportunités en développement web et mobile.</p>
+
+        <a class="contact__mail reveal" href="mailto:jhaminarivo@gmail.com">
+          jhaminarivo@gmail.com <svg class="ico"><use href="#i-arrow-ur"/></svg>
+        </a>
+
+        <ul class="contact__list reveal">
+          <li><svg class="ico"><use href="#i-phone"/></svg><a href="tel:+261343977592">+261 34 39 775 92</a></li>
+          <li><svg class="ico"><use href="#i-pin"/></svg><span>Antananarivo, Madagascar</span></li>
+          <li><svg class="ico"><use href="#i-github"/></svg><a href="https://github.com/Atlas-idev" target="_blank" rel="noopener">github.com/Atlas-idev</a></li>
+        </ul>
+
+        <div class="hero__cta reveal">
+          <a href="mailto:jhaminarivo@gmail.com" class="btn btn--primary" data-magnetic><svg class="ico"><use href="#i-mail"/></svg> Envoyer un e-mail</a>
+          <a href="cv.html" class="btn btn--ghost" data-magnetic>Voir le CV en ligne <svg class="ico"><use href="#i-arrow-ur"/></svg></a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ============ FOOTER ============ -->
+  <footer class="footer">
+    <div class="container footer__top">
+      <a href="#top" class="brand" aria-label="Haminarivo, retour en haut de page">
+        <svg class="brand__mark" aria-hidden="true"><use href="#logo"/></svg>
+        <span class="brand__name">Haminarivo</span>
+      </a>
+      <nav class="footer__links" aria-label="Liens externes">
+        <a href="https://github.com/Atlas-idev" target="_blank" rel="noopener">GitHub</a>
+        <a href="cv.html">CV</a>
+        <a href="https://aylmara.com" target="_blank" rel="noopener">Aylmara</a>
+        <a href="https://nlamada.com" target="_blank" rel="noopener">Next Level Agency</a>
+        <a href="mailto:jhaminarivo@gmail.com">E-mail</a>
+      </nav>
+      <a href="#top" class="footer__up" aria-label="Retour en haut" data-magnetic><svg class="ico"><use href="#i-arrow-up"/></svg></a>
+    </div>
+    <p class="footer__motto reveal"><small>Ma devise</small>Never give up.</p>
+    <p class="footer__word" aria-hidden="true" data-chars data-text="Haminarivo">Haminarivo</p>
+    <div class="container footer__bottom">
+      <span>© <span data-year>2026</span> Ny Mandresy Juan Davids HAMINARIVO</span>
+      <span>Code, design &amp; intégration — Antananarivo</span>
+    </div>
+  </footer>
+
+  <script src="js/main.js" defer></script>
+</body>
+</html>

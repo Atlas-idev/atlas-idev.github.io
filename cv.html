@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>CV — Ny Mandresy Juan Davids HAMINARIVO · Développeur web full-stack</title>
+  <meta name="description" content="CV de Ny Mandresy Juan Davids HAMINARIVO, développeur web full-stack à Antananarivo : React, Laravel, Django, React Native, Flutter, WordPress.">
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="css/fonts.css">
+  <style>
+    :root {
+      --ink: #0e1015;
+      --ink-2: #3c414d;
+      --muted: #737987;
+      --line: #e3e5ea;
+      --soft: #f4f5f8;
+      --accent: #5b55e8;
+      --font: "Archivo", "Segoe UI", sans-serif;
+      --serif: "Instrument Serif", Georgia, serif;
+      --mono: "JetBrains Mono", Consolas, monospace;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    ul { list-style: none; }
+    a { color: inherit; text-decoration: none; }
+    body { background: #1b1d23; font-family: var(--font); color: var(--ink); -webkit-font-smoothing: antialiased; }
+    @page { size: A4; margin: 0; }
+
+    /* Barre d'outils (écran uniquement) */
+    .toolbar {
+      position: sticky; top: 0; z-index: 5;
+      display: flex; justify-content: center; gap: 10px;
+      padding: 14px;
+      background: rgba(27, 29, 35, 0.9);
+      backdrop-filter: blur(10px);
+    }
+    .toolbar a {
+      display: inline-flex; align-items: center; gap: 8px;
+      height: 42px; padding: 0 20px; border-radius: 999px;
+      font-size: 14px; font-weight: 600;
+      color: #e8ebf2; border: 1px solid rgba(233, 234, 238, 0.2);
+    }
+    .toolbar a.primary { background: #9b98ff; color: #0b0e13; border-color: #9b98ff; }
+
+    .page {
+      position: relative;
+      width: 210mm; height: 297mm;
+      margin: 24px auto;
+      padding: 12mm 14mm 10mm;
+      background: #fff;
+      overflow: hidden;
+      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4);
+      display: flex; flex-direction: column;
+      font-size: 8.2pt;
+      line-height: 1.45;
+    }
+
+    /* En-tête de page */
+    .topline {
+      display: flex; justify-content: space-between; align-items: center;
+      padding-bottom: 4mm;
+      border-bottom: 1px solid var(--line);
+      font-family: var(--mono); font-size: 6.6pt; letter-spacing: 0.14em; text-transform: uppercase; color: var(--muted);
+    }
+    .topline .brand { display: flex; align-items: center; gap: 2.5mm; color: var(--ink); font-family: var(--font); font-weight: 600; font-stretch: 80%; letter-spacing: 0.1em; font-size: 8pt; }
+    .topline svg { width: 7mm; height: 7mm; }
+
+    /* Identité */
+    .hero { display: grid; grid-template-columns: 1fr 27mm; gap: 8mm; align-items: end; padding: 5mm 0 4.5mm; }
+    .hero__first { font-family: var(--mono); font-size: 7.6pt; letter-spacing: 0.16em; text-transform: uppercase; color: var(--ink-2); }
+    .hero__name { margin-top: 1mm; font-size: 36pt; font-weight: 700; font-stretch: 68%; line-height: 0.88; letter-spacing: -0.005em; text-transform: uppercase; }
+    .hero__role { margin-top: 2.4mm; font-size: 12pt; font-weight: 600; font-stretch: 85%; }
+    .hero__role em { font-family: var(--serif); font-style: italic; font-weight: 400; color: var(--accent); font-size: 1.12em; }
+    .hero__sub { margin-top: 1mm; color: var(--muted); font-size: 8.6pt; }
+    .hero__motto { display: flex; align-items: baseline; gap: 2.5mm; margin-top: 2mm; }
+    .hero__motto span { font-family: var(--mono); font-size: 6.4pt; letter-spacing: 0.14em; text-transform: uppercase; color: var(--muted); }
+    .hero__motto em { font-family: var(--serif); font-style: italic; font-size: 13pt; line-height: 1; color: var(--accent); }
+    .hero__photo { width: 27mm; height: 32mm; border-radius: 2.5mm; overflow: hidden; background: var(--soft); }
+    .hero__photo img { width: 100%; height: 100%; object-fit: cover; object-position: 50% 20%; }
+
+    .contact {
+      display: grid; grid-template-columns: repeat(5, auto); justify-content: space-between; gap: 3mm;
+      padding: 2.8mm 4mm;
+      background: var(--ink); color: #fff; border-radius: 2mm;
+      font-size: 7.6pt;
+    }
+    .contact li { display: flex; align-items: center; gap: 1.8mm; white-space: nowrap; }
+    .contact svg { width: 3.4mm; height: 3.4mm; color: #9b98ff; flex: none; }
+
+    /* Colonnes */
+    .cols { flex: 1; display: grid; grid-template-columns: 1fr 58mm; gap: 8mm; padding-top: 5mm; min-height: 0; }
+    .side { border-left: 1px solid var(--line); padding-left: 6mm; }
+
+    .block + .block { margin-top: 4.4mm; }
+    .h {
+      display: flex; align-items: baseline; gap: 2.5mm;
+      margin-bottom: 2.4mm;
+      font-size: 10.5pt; font-weight: 700; font-stretch: 75%; letter-spacing: 0.04em; text-transform: uppercase;
+    }
+    .h b { font-family: var(--mono); font-weight: 400; font-size: 6.6pt; color: var(--accent); letter-spacing: 0.06em; }
+    .h::after { content: ""; flex: 1; height: 1px; background: var(--line); transform: translateY(-1mm); }
+
+    .lead { color: var(--ink-2); font-size: 8.4pt; line-height: 1.5; }
+    .lead strong { color: var(--ink); }
+
+    .job + .job { margin-top: 3mm; padding-top: 3mm; border-top: 1px dashed var(--line); }
+    .job__head { display: flex; justify-content: space-between; align-items: baseline; gap: 4mm; }
+    .job__title { font-size: 10.5pt; font-weight: 700; font-stretch: 85%; }
+    .job__title a { color: var(--accent); font-family: var(--mono); font-weight: 400; font-size: 6.8pt; margin-left: 1.5mm; letter-spacing: 0.02em; }
+    .job__date { font-family: var(--mono); font-size: 6.8pt; color: var(--muted); white-space: nowrap; text-transform: uppercase; letter-spacing: 0.06em; }
+    .job__role { margin-top: 0.4mm; color: var(--accent); font-weight: 600; font-size: 8.2pt; }
+    .bul { margin-top: 1.4mm; display: grid; gap: 0.7mm; }
+    .bul li { position: relative; padding-left: 4mm; color: var(--ink-2); }
+    .bul li::before { content: ""; position: absolute; left: 0; top: 0.68em; width: 2.2mm; height: 1px; background: var(--accent); }
+    .bul strong { color: var(--ink); font-weight: 600; }
+    .tags { display: flex; flex-wrap: wrap; gap: 1.2mm; margin-top: 1.6mm; }
+    .tags li { padding: 0.5mm 1.8mm; border: 1px solid var(--line); border-radius: 1mm; font-family: var(--mono); font-size: 6.4pt; color: var(--ink-2); }
+
+    /* Colonne latérale */
+    .skill + .skill { margin-top: 2.6mm; }
+    .skill dt { font-family: var(--mono); font-size: 6.4pt; letter-spacing: 0.12em; text-transform: uppercase; color: var(--muted); }
+    .skill dd { margin-top: 0.6mm; font-weight: 500; line-height: 1.45; }
+
+    .lang + .lang { margin-top: 2.4mm; }
+    .lang__row { display: flex; justify-content: space-between; }
+    .lang__row span { font-weight: 600; }
+    .lang__row em { font-style: normal; font-family: var(--mono); font-size: 6.6pt; color: var(--muted); }
+    .bar { height: 1.2mm; margin-top: 1mm; background: var(--soft); border-radius: 1mm; overflow: hidden; }
+    .bar i { display: block; height: 100%; background: var(--accent); }
+
+    .chips { display: flex; flex-wrap: wrap; gap: 1.4mm; }
+    .chips li { padding: 0.8mm 2.4mm; border-radius: 4mm; background: var(--soft); font-size: 7.6pt; }
+
+    .edu + .edu { margin-top: 3mm; }
+    .edu strong { display: block; font-weight: 700; font-stretch: 90%; font-size: 9pt; }
+    .edu span { display: block; color: var(--ink-2); }
+    .edu em { font-style: normal; font-family: var(--mono); font-size: 6.6pt; color: var(--muted); }
+
+    .note { padding: 3.5mm; background: var(--soft); border-radius: 2mm; }
+    .note p { color: var(--ink-2); }
+    .note strong { display: block; margin-bottom: 1mm; font-size: 9pt; color: var(--ink); }
+
+    /* Page 2 */
+    .page2-title { padding: 5mm 0 0; font-size: 26pt; font-weight: 700; font-stretch: 68%; line-height: 0.9; text-transform: uppercase; }
+    .page2-title em { font-family: var(--serif); font-style: italic; font-weight: 400; text-transform: none; color: var(--accent); }
+    .project + .project { margin-top: 2.6mm; padding-top: 2.6mm; border-top: 1px dashed var(--line); }
+    .project__head { display: flex; justify-content: space-between; align-items: baseline; }
+    .project__title { font-size: 10.5pt; font-weight: 700; font-stretch: 85%; }
+    .project__desc { margin-top: 0.8mm; color: var(--ink-2); }
+
+    .sites { display: grid; grid-template-columns: 1fr 1fr; gap: 2.4mm; }
+    .site { padding: 2.2mm 3mm; border: 1px solid var(--line); border-radius: 1.6mm; }
+    .site strong { display: block; font-weight: 700; font-stretch: 85%; font-size: 9pt; }
+    .site span { display: block; color: var(--muted); font-size: 7.4pt; line-height: 1.4; margin-top: 0.4mm; }
+    .site a { display: block; margin-top: 1mm; font-family: var(--mono); font-size: 6.8pt; color: var(--accent); }
+
+    .foot {
+      display: flex; justify-content: space-between;
+      margin-top: 3mm; padding-top: 2.6mm;
+      border-top: 1px solid var(--line);
+      font-family: var(--mono); font-size: 6.4pt; letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted);
+    }
+
+    @media print {
+      body { background: #fff; }
+      .toolbar { display: none; }
+      .page { margin: 0; box-shadow: none; break-after: page; }
+      .page:last-child { break-after: auto; }
+      * { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+    }
+    @media screen and (max-width: 860px) {
+      .page { transform-origin: top left; }
+    }
+  </style>
+</head>
+<body>
+
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true">
+    <symbol id="logo" viewBox="0 0 64 64"><g fill="none" stroke-width="7.5" transform="translate(3.5 -1)"><path d="M26 8V44a10 10 0 0 1-10 10H8" stroke="currentColor"/><path d="M46 8V58" stroke="currentColor"/><path d="M29.75 31H42.25" stroke="#5b55e8"/></g></symbol>
+    <symbol id="i-mail" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="m4 7 8 6 8-6" fill="none" stroke="currentColor" stroke-width="1.8"/></symbol>
+    <symbol id="i-phone" viewBox="0 0 24 24"><path d="M6.6 3h2.8l1.4 4.2-2 1.4a12 12 0 0 0 6.6 6.6l1.4-2 4.2 1.4v2.8A2.6 2.6 0 0 1 18.4 20 15.4 15.4 0 0 1 4 5.6 2.6 2.6 0 0 1 6.6 3Z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></symbol>
+    <symbol id="i-pin" viewBox="0 0 24 24"><path d="M12 21s-7-6.2-7-11.5a7 7 0 0 1 14 0C19 14.8 12 21 12 21Z" fill="none" stroke="currentColor" stroke-width="1.8"/><circle cx="12" cy="9.5" r="2.5" fill="none" stroke="currentColor" stroke-width="1.8"/></symbol>
+    <symbol id="i-web" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M3 12h18M12 3c2.5 2.6 3.8 5.6 3.8 9s-1.3 6.4-3.8 9c-2.5-2.6-3.8-5.6-3.8-9S9.5 5.6 12 3Z" fill="none" stroke="currentColor" stroke-width="1.8"/></symbol>
+    <symbol id="i-github" viewBox="0 0 24 24"><path fill="currentColor" d="M12 2a10 10 0 0 0-3.2 19.5c.5.1.7-.2.7-.5v-1.7c-2.8.6-3.4-1.2-3.4-1.2-.4-1.2-1.1-1.5-1.1-1.5-.9-.6.1-.6.1-.6 1 .1 1.5 1 1.5 1 .9 1.5 2.4 1.1 3 .8.1-.6.3-1.1.6-1.3-2.2-.3-4.6-1.1-4.6-5 0-1.1.4-2 1-2.7-.1-.3-.4-1.3.1-2.7 0 0 .8-.3 2.8 1a9.6 9.6 0 0 1 5 0c1.9-1.3 2.8-1 2.8-1 .5 1.4.2 2.4.1 2.7.6.7 1 1.6 1 2.7 0 3.9-2.4 4.7-4.6 5 .4.3.7.9.7 1.9V21c0 .3.2.6.7.5A10 10 0 0 0 12 2Z"/></symbol>
+  </svg>
+
+  <nav class="toolbar" aria-label="Actions">
+    <a href="index.html">← Portfolio</a>
+    <a class="primary" href="assets/CV-HAMINARIVO.pdf" download>Télécharger le PDF</a>
+  </nav>
+
+  <!-- ================= PAGE 1 ================= -->
+  <article class="page">
+    <div class="topline">
+      <span class="brand"><svg aria-hidden="true"><use href="#logo"/></svg>Haminarivo</span>
+      <span>Curriculum vitae · 2026</span>
+    </div>
+
+    <header class="hero">
+      <div>
+        <p class="hero__first">Ny Mandresy Juan Davids</p>
+        <h1 class="hero__name">Haminarivo</h1>
+        <p class="hero__role">Développeur web <em>full-stack</em> · Web &amp; mobile</p>
+        <p class="hero__sub">Alternant en développement &amp; intégration numérique chez Aylmara</p>
+        <p class="hero__motto"><span>Devise</span><em>Never give up.</em></p>
+      </div>
+      <div class="hero__photo"><img src="assets/img/portrait-sm.jpg" alt="Photo de Ny Mandresy Juan Davids Haminarivo"></div>
+    </header>
+
+    <ul class="contact">
+      <li><svg><use href="#i-mail"/></svg><a href="mailto:jhaminarivo@gmail.com">jhaminarivo@gmail.com</a></li>
+      <li><svg><use href="#i-phone"/></svg><a href="tel:+261343977592">+261 34 39 775 92</a></li>
+      <li><svg><use href="#i-pin"/></svg>Antananarivo, Madagascar</li>
+      <li><svg><use href="#i-web"/></svg><a href="https://atlas-idev.github.io">atlas-idev.github.io</a></li>
+      <li><svg><use href="#i-github"/></svg><a href="https://github.com/Atlas-idev">github.com/Atlas-idev</a></li>
+    </ul>
+
+    <div class="cols">
+      <div class="main">
+        <section class="block">
+          <h2 class="h"><b>01</b>Profil</h2>
+          <p class="lead">
+            Développeur web <strong>full-stack</strong> en alternance chez <strong>Aylmara</strong> et étudiant en licence informatique à l'ESTI.
+            Je conçois et développe des <strong>sites vitrines</strong>, des <strong>applications web</strong> et des <strong>applications mobiles</strong>,
+            de la maquette Figma à la mise en production&nbsp;: intégration responsive, API REST, back-end Laravel ou Django,
+            applications React Native et Flutter. Habitué à travailler avec les équipes marketing et techniques,
+            j'accorde une grande importance à la qualité, à la performance et aux besoins des utilisateurs.
+          </p>
+        </section>
+
+        <section class="block">
+          <h2 class="h"><b>02</b>Expérience professionnelle</h2>
+
+          <div class="job">
+            <div class="job__head">
+              <h3 class="job__title">Aylmara <a href="https://aylmara.com">aylmara.com</a></h3>
+              <span class="job__date">Nov. 2025 — En cours</span>
+            </div>
+            <p class="job__role">Développeur web &amp; intégrateur · Alternance</p>
+            <ul class="bul">
+              <li>Conception et développement d'applications web et de modules métier, dont la plateforme <strong>Aylmara TaskFlows</strong> (Laravel, React Native, Flutter).</li>
+              <li>Intégration de maquettes <strong>Figma</strong> en interfaces HTML, CSS et JavaScript responsives, connectées aux API.</li>
+              <li>Réalisation du site <strong>aylmara.com</strong> : design, intégration et mise en ligne.</li>
+              <li>Création de newsletters et de campagnes <strong>CRM</strong> avec les équipes marketing et technique.</li>
+              <li>Analyse des besoins, tests, corrections et maintenance évolutive des fonctionnalités.</li>
+            </ul>
+            <ul class="tags"><li>Laravel</li><li>PHP</li><li>React Native</li><li>Flutter</li><li>JavaScript</li><li>Figma</li><li>CRM</li></ul>
+          </div>
+
+          <div class="job">
+            <div class="job__head">
+              <h3 class="job__title">Yavoloko.art <a href="https://yavoloko.art">yavoloko.art</a></h3>
+              <span class="job__date">2024 — 2026</span>
+            </div>
+            <p class="job__role">Site vitrine WordPress · Création 2024 – 2025 · Refonte 2026</p>
+            <ul class="bul">
+              <li>Création du site de la galerie d'art&nbsp;: personnalisation du thème, pages accueil, à propos, œuvres et artistes.</li>
+              <li>Refonte de l'identité visuelle et de la présentation des collections pour valoriser les œuvres.</li>
+              <li>Optimisation du référencement naturel, des temps de chargement et de l'affichage mobile.</li>
+            </ul>
+            <ul class="tags"><li>WordPress</li><li>SEO</li><li>Performance</li><li>Responsive</li></ul>
+          </div>
+
+          <div class="job">
+            <div class="job__head">
+              <h3 class="job__title">VotreDecennaleFacile.fr <a href="https://www.votredecennalefacile.fr">votredecennalefacile.fr</a></h3>
+              <span class="job__date">Avril 2025</span>
+            </div>
+            <p class="job__role">Projet freelance · WordPress</p>
+            <ul class="bul">
+              <li>Conception du design, personnalisation du thème WordPress et intégration des contenus.</li>
+              <li>Amélioration de l'expérience utilisateur et mise en place des bases du référencement naturel.</li>
+            </ul>
+            <ul class="tags"><li>WordPress</li><li>UX</li><li>SEO</li></ul>
+          </div>
+        </section>
+      </div>
+
+      <aside class="side">
+        <section class="block">
+          <h2 class="h"><b>03</b>Compétences</h2>
+          <dl>
+            <div class="skill"><dt>Front-end</dt><dd>React, JavaScript, HTML5, CSS3, responsive design</dd></div>
+            <div class="skill"><dt>Back-end</dt><dd>PHP / Laravel, Python / Django, Java, C#, API REST</dd></div>
+            <div class="skill"><dt>Mobile</dt><dd>React Native, Flutter (Dart)</dd></div>
+            <div class="skill"><dt>Données &amp; CMS</dt><dd>PostgreSQL, WordPress</dd></div>
+            <div class="skill"><dt>Web &amp; marketing</dt><dd>SEO, performance web, newsletters, campagnes CRM</dd></div>
+            <div class="skill"><dt>Design &amp; outils</dt><dd>Figma, Canva, Git / GitHub, Office 365</dd></div>
+          </dl>
+        </section>
+
+        <section class="block">
+          <h2 class="h"><b>04</b>Langues</h2>
+          <div class="lang"><div class="lang__row"><span>Malgache</span><em>Langue maternelle</em></div><div class="bar"><i style="width:100%"></i></div></div>
+          <div class="lang"><div class="lang__row"><span>Français</span><em>B2 · Courant</em></div><div class="bar"><i style="width:78%"></i></div></div>
+          <div class="lang"><div class="lang__row"><span>Anglais</span><em>B1 · Intermédiaire</em></div><div class="bar"><i style="width:58%"></i></div></div>
+        </section>
+
+        <section class="block">
+          <h2 class="h"><b>05</b>Atouts</h2>
+          <ul class="chips">
+            <li>Adaptabilité</li><li>Communication</li><li>Travail en équipe</li><li>Résolution de problèmes</li><li>Respect des délais</li>
+          </ul>
+        </section>
+      </aside>
+    </div>
+
+    <div class="foot"><span>Ny Mandresy Juan Davids Haminarivo · Développeur web full-stack</span><span>1 / 2</span></div>
+  </article>
+
+  <!-- ================= PAGE 2 ================= -->
+  <article class="page">
+    <div class="topline">
+      <span class="brand"><svg aria-hidden="true"><use href="#logo"/></svg>Haminarivo</span>
+      <span>Projets &amp; formation</span>
+    </div>
+
+    <h2 class="page2-title">Projets <em>sélectionnés.</em></h2>
+
+    <div class="cols">
+      <div class="main">
+        <section class="block">
+          <h2 class="h"><b>06</b>Applications</h2>
+
+          <div class="project">
+            <div class="project__head"><h3 class="project__title">Aylmara TaskFlows</h3><span class="job__date">Aylmara · Web &amp; mobile</span></div>
+            <p class="project__desc">Plateforme de gestion des tâches et des flux de travail, avec une API Laravel et des applications mobiles React Native et Flutter.</p>
+            <ul class="bul">
+              <li>Back-end et API REST avec <strong>Laravel (PHP)</strong>.</li>
+              <li>Applications mobiles multiplateformes en <strong>React Native</strong> et <strong>Flutter (Dart)</strong>.</li>
+              <li>Suivi des tâches, des statuts et des flux de travail des équipes.</li>
+            </ul>
+            <ul class="tags"><li>Laravel</li><li>PHP</li><li>React Native</li><li>Flutter</li><li>Dart</li><li>API REST</li></ul>
+          </div>
+
+          <div class="project">
+            <div class="project__head"><h3 class="project__title">SecurIT</h3><span class="job__date">2025</span></div>
+            <p class="project__desc">Application de signalement et de suivi des incidents de sécurité, avec une interface React et un back-end Django.</p>
+            <ul class="bul">
+              <li>Tableaux de bord et formulaires de signalement.</li>
+              <li>API Django, authentification et gestion des rôles.</li>
+              <li>Structuration de la base de données et connexion React / Django.</li>
+            </ul>
+            <ul class="tags"><li>React</li><li>Django</li><li>PostgreSQL</li><li>API</li></ul>
+          </div>
+
+          <div class="project">
+            <div class="project__head"><h3 class="project__title">ParkMe</h3><span class="job__date">2024</span></div>
+            <p class="project__desc">Plateforme web de réservation de places de parking à Madagascar, avec géolocalisation des emplacements disponibles.</p>
+            <ul class="bul">
+              <li>Intégration de Google Maps pour localiser les parkings disponibles.</li>
+              <li>Conception du parcours&nbsp;: recherche, filtres et confirmation de réservation.</li>
+              <li>Gestion des places, des disponibilités et de la réservation en temps réel.</li>
+            </ul>
+            <ul class="tags"><li>Google Maps</li><li>Géolocalisation</li><li>Temps réel</li></ul>
+          </div>
+
+          <div class="project">
+            <div class="project__head"><h3 class="project__title">Hackathon interuniversitaire Axian</h3><span class="job__date">2024</span></div>
+            <p class="project__desc">Conception en équipe d'une plateforme d'essayage en ligne (virtual try-on).</p>
+            <ul class="bul">
+              <li>Définition du concept et du parcours utilisateur en équipe pluridisciplinaire.</li>
+              <li>Maquettes et prototype présentés lors du pitch final devant un jury, en temps limité.</li>
+            </ul>
+            <ul class="tags"><li>UX/UI</li><li>Prototypage</li><li>Pitch</li></ul>
+          </div>
+        </section>
+
+        <section class="block">
+          <h2 class="h"><b>07</b>Sites en ligne</h2>
+          <div class="sites">
+            <div class="site"><strong>Aylmara</strong><span>Externalisation, contenu digital et développement web</span><a href="https://aylmara.com">aylmara.com</a></div>
+            <div class="site"><strong>Next Level Agency</strong><span>Agence 360 France × Madagascar</span><a href="https://nlamada.com">nlamada.com</a></div>
+            <div class="site"><strong>Yavoloko</strong><span>Galerie d'art · WordPress</span><a href="https://yavoloko.art">yavoloko.art</a></div>
+            <div class="site"><strong>VotreDecennaleFacile</strong><span>Assurance décennale BTP · WordPress</span><a href="https://www.votredecennalefacile.fr">votredecennalefacile.fr</a></div>
+          </div>
+        </section>
+      </div>
+
+      <aside class="side">
+        <section class="block">
+          <h2 class="h"><b>08</b>Formation</h2>
+          <div class="edu"><strong>Licence informatique</strong><span>Intégration &amp; développement</span><span>ESTI, Antananarivo</span><em>2023 — En cours</em></div>
+          <div class="edu"><strong>Formation de base en robotique</strong><span>GasyTech</span><em>2025</em></div>
+          <div class="edu"><strong>Lycée Privé Commercial</strong><span>L.P.C.</span><em>2023</em></div>
+        </section>
+
+        <section class="block">
+          <h2 class="h"><b>09</b>Méthode</h2>
+          <ul class="bul">
+            <li>Analyse des besoins métier</li>
+            <li>Maquettes et parcours sur Figma</li>
+            <li>Développement front, back et API</li>
+            <li>Tests, SEO, performance, maintenance</li>
+          </ul>
+        </section>
+
+        <section class="block">
+          <h2 class="h"><b>10</b>Centres d'intérêt</h2>
+          <ul class="chips"><li>Robotique</li><li>UI design</li><li>Nouvelles technologies</li></ul>
+        </section>
+
+        <section class="block note">
+          <p><strong>Disponible</strong>Ouvert aux missions freelance, aux collaborations et aux opportunités en développement web et mobile.</p>
+        </section>
+      </aside>
+    </div>
+
+    <div class="foot"><span>Portfolio · atlas-idev.github.io — github.com/Atlas-idev — Never give up</span><span>2 / 2</span></div>
+  </article>
+
+</body>
+</html>
