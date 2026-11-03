@@ -26,7 +26,7 @@
 
   <link rel="preload" href="assets/fonts/Archivo-normal-100_900.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" as="image" href="assets/img/hero.jpg" media="(min-width: 801px)">
-  <link rel="preload" as="image" href="assets/img/hero-sm.jpg" media="(max-width: 800px)">
+  <link rel="preload" as="image" href="assets/img/hero-mobile.jpg" imagesrcset="assets/img/hero-mobile-800.jpg 800w, assets/img/hero-mobile.jpg 1200w" imagesizes="100vw" media="(max-width: 800px)">
   <link rel="stylesheet" href="css/fonts.css">
   <link rel="stylesheet" href="css/style.css">
 
@@ -145,7 +145,7 @@
     <section class="hero" id="top">
       <div class="hero__media" aria-hidden="true">
         <picture>
-          <source media="(max-width: 800px)" srcset="assets/img/hero-sm.jpg">
+          <source media="(max-width: 800px)" srcset="assets/img/hero-mobile-800.jpg 800w, assets/img/hero-mobile.jpg 1200w" sizes="100vw" width="1200" height="1184">
           <img src="assets/img/hero.jpg" alt="" fetchpriority="high">
         </picture>
       </div>
@@ -715,7 +715,7 @@
     <section class="contact" id="contact">
       <div class="contact__media" aria-hidden="true">
         <picture>
-          <source media="(max-width: 800px)" srcset="assets/img/contact-sm.jpg">
+          <source media="(max-width: 800px)" srcset="assets/img/contact-mobile-800.jpg 800w, assets/img/contact-mobile.jpg 1200w" sizes="100vw" width="1200" height="1402">
           <img src="assets/img/contact.jpg" alt="" loading="lazy">
         </picture>
       </div>
