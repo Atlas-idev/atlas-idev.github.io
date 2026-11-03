@@ -1,4 +1,4 @@
-# Portfolio — Ny Mandresy Juan Davids HAMINARIVO
+# Portfolio — HAMINARIVO Ny Mandresy Juan Davids
 
 Portfolio de développeur web full-stack (Antananarivo, Madagascar).
 Site statique en HTML, CSS et JavaScript : aucune dépendance, aucune compilation.
