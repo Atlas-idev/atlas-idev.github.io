@@ -1026,8 +1026,8 @@ body::after {
 
 @media (max-width: 800px) {
   /* Mobile : photo HD en haut, à ses proportions, le texte arrive sous le visage */
-  .hero { padding: 57vw 0 28px; }
-  .hero__media { bottom: auto; aspect-ratio: 1200 / 1184; }
+  .hero { min-height: 0; justify-content: flex-start; padding: 64vw 0 28px; }
+  .hero__media { bottom: auto; height: calc(100vw * 1184 / 1200); }
   .hero__media img { object-position: 50% 0; }
   .hero__media::after {
     background:
@@ -1038,8 +1038,8 @@ body::after {
   .hud { display: none; }
   .stats { justify-content: space-between; }
 
-  .contact { padding-top: 76vw; }
-  .contact__media { bottom: auto; aspect-ratio: 1200 / 1402; }
+  .contact { padding-top: 88vw; }
+  .contact__media { bottom: auto; height: calc(100vw * 1402 / 1200); }
   .contact__media img { object-position: 50% 0; }
   .contact__media::after {
     background:
