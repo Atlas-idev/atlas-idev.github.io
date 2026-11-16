@@ -1,0 +1,12 @@
+# Cloudflare Worker de l'assistant du portfolio (voir assistant/README.md).
+name = "portfolio-assistant"
+main = "worker.js"
+compatibility_date = "2026-11-01"
+
+[vars]
+# Sites autorisés à appeler l'assistant (séparés par des virgules).
+ALLOWED_ORIGINS = "https://atlas-idev.github.io,http://127.0.0.1:8765,http://localhost:8765"
+GEMINI_MODEL = "gemini-flash-lite-latest"
+GEMINI_FALLBACK_MODEL = "gemini-3.5-flash"
+
+# La clé ne s'écrit jamais ici : npx wrangler secret put GEMINI_API_KEY

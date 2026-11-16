@@ -3,3 +3,7 @@ Thumbs.db
 desktop.ini
 .vscode/
 *.log
+
+# Secrets locaux du Worker de l'assistant (clé Gemini) : jamais publiés
+.dev.vars
+.wrangler/

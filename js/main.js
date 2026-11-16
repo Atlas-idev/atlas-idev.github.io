@@ -220,6 +220,58 @@
 
   }
 
+  /* ---------- Projets : écrans web et téléphone ---------- */
+  document.querySelectorAll("[data-case]").forEach((box) => {
+    const shots = [...box.querySelectorAll(".browser__screen img")];
+    const buttons = [...box.querySelectorAll("[data-shot]")];
+    const url = box.querySelector("[data-case-url]");
+    let current = 0;
+    let timer = null;
+
+    const show = (i) => {
+      current = (i + shots.length) % shots.length;
+      shots.forEach((img, k) => img.classList.toggle("is-active", k === current));
+      buttons.forEach((b, k) => b.setAttribute("aria-pressed", String(k === current)));
+      if (url) url.textContent = shots[current].dataset.url;
+    };
+    const stop = () => {
+      clearInterval(timer);
+      timer = null;
+      box.classList.remove("is-cycling");
+    };
+    buttons.forEach((b, k) => b.addEventListener("click", () => {
+      box.dataset.manual = "1";
+      stop();
+      show(k);
+    }));
+
+    // Défilement automatique tant que le projet est à l'écran, jusqu'au premier clic
+    if (!reduceMotion && shots.length > 1 && "IntersectionObserver" in window) {
+      new IntersectionObserver(([entry]) => {
+        if (entry.isIntersecting && !timer && !box.dataset.manual) {
+          box.classList.add("is-cycling");
+          timer = setInterval(() => show(current + 1), 5000);
+        } else if (!entry.isIntersecting && timer) {
+          stop();
+        }
+      }, { threshold: 0.45 }).observe(box);
+    }
+
+    // Profondeur : le navigateur et le téléphone suivent légèrement la souris
+    const stage = box.querySelector(".case__stage");
+    if (stage && finePointer && !reduceMotion) {
+      stage.addEventListener("pointermove", (e) => {
+        const r = stage.getBoundingClientRect();
+        stage.style.setProperty("--mx", ((e.clientX - r.left) / r.width - 0.5).toFixed(3));
+        stage.style.setProperty("--my", ((e.clientY - r.top) / r.height - 0.5).toFixed(3));
+      });
+      stage.addEventListener("pointerleave", () => {
+        stage.style.setProperty("--mx", 0);
+        stage.style.setProperty("--my", 0);
+      });
+    }
+  });
+
   /* ---------- Année ---------- */
   const year = document.querySelector("[data-year]");
   if (year) year.textContent = new Date().getFullYear();

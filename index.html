@@ -28,7 +28,7 @@
   <link rel="preload" as="image" href="assets/img/hero.jpg" media="(min-width: 801px)">
   <link rel="preload" as="image" href="assets/img/hero-mobile.jpg" imagesrcset="assets/img/hero-mobile-800.jpg 800w, assets/img/hero-mobile.jpg 1200w" imagesizes="100vw" media="(max-width: 800px)">
   <link rel="stylesheet" href="css/fonts.css?v=20261103b">
-  <link rel="stylesheet" href="css/style.css?v=20261103b">
+  <link rel="stylesheet" href="css/style.css?v=20261116">
 
   <script>
     (function (d) {
@@ -508,46 +508,109 @@
           </a>
         </header>
 
-        <div class="bento">
-          <!-- TaskFlows -->
-          <article class="project project--feature reveal">
-            <div class="project__visual project__visual--kanban reveal-img" aria-hidden="true">
-              <div class="kanban">
-                <div class="kanban__col">
-                  <p>À faire <b>3</b></p>
-                  <span class="kcard"></span><span class="kcard"></span><span class="kcard kcard--short"></span>
-                </div>
-                <div class="kanban__col">
-                  <p>En cours <b>2</b></p>
-                  <span class="kcard kcard--active"></span><span class="kcard"></span>
-                </div>
-                <div class="kanban__col">
-                  <p>Terminé <b>4</b></p>
-                  <span class="kcard kcard--done"></span><span class="kcard kcard--done"></span><span class="kcard kcard--done kcard--short"></span>
-                </div>
+        <div class="cases">
+          <!-- Taskflows : captures réelles sur données de démonstration -->
+          <article class="case" data-case style="--case: #5b8fd6">
+            <div class="case__visual">
+              <div class="case__stage reveal-img">
+                <figure class="browser">
+                  <div class="browser__bar" aria-hidden="true">
+                    <span class="browser__dots"><i></i><i></i><i></i></span>
+                    <span class="browser__url" data-case-url>taskflows · vue d'ensemble</span>
+                  </div>
+                  <div class="browser__screen">
+                    <img class="is-active" src="assets/img/projects/taskflows-dashboard.webp" data-url="taskflows · vue d'ensemble" alt="Taskflows sur ordinateur : vue d'ensemble de la semaine, compteurs et vue globale des projets par marque" width="1440" height="900" loading="lazy" decoding="async">
+                    <img src="assets/img/projects/taskflows-kanban.webp" data-url="taskflows · tableau de production" alt="Taskflows : tableau de production en colonnes par statut" width="1440" height="900" loading="lazy" decoding="async">
+                    <img src="assets/img/projects/taskflows-pilotage.webp" data-url="taskflows · pilotage" alt="Taskflows : pilotage de la production, tâches terminées par semaine et répartition par statut" width="1440" height="900" loading="lazy" decoding="async">
+                  </div>
+                </figure>
+                <figure class="iphone" style="--screen: #fcfeff">
+                  <div class="iphone__screen">
+                    <span class="iphone__status" aria-hidden="true"><b>9:41</b><i></i><svg viewBox="0 0 76 13"><rect x="0" y="8" width="3" height="4" rx="1"/><rect x="4.7" y="5.5" width="3" height="6.5" rx="1"/><rect x="9.4" y="3" width="3" height="9" rx="1"/><rect x="14.1" y="0.5" width="3" height="11.5" rx="1"/><path class="w" d="M24.6 4.6a10.6 10.6 0 0 1 14.8 0M27.5 7.6a6.4 6.4 0 0 1 9 0"/><path d="M32 12.2 29.7 9.9a3.3 3.3 0 0 1 4.6 0Z"/><rect class="b" x="48.5" y="0.7" width="23.5" height="11.6" rx="3.6"/><rect x="50.5" y="2.7" width="19.5" height="7.6" rx="2"/><rect class="c" x="73.4" y="4.4" width="1.7" height="4.2" rx="0.85"/></svg></span>
+                    <span class="iphone__island" aria-hidden="true"></span>
+                    <img src="assets/img/projects/taskflows-mobile.webp" alt="Taskflows sur téléphone : vue d'ensemble de la semaine" width="600" height="1212" loading="lazy" decoding="async">
+                    <span class="iphone__home" aria-hidden="true"></span>
+                  </div>
+                </figure>
+                <span class="case__note">Captures réelles · données de démo</span>
               </div>
-              <div class="phone">
-                <span class="phone__notch"></span>
-                <span class="phone__row phone__row--title"></span>
-                <span class="phone__row"></span><span class="phone__row phone__row--accent"></span><span class="phone__row"></span>
+              <div class="case__switch" role="group" aria-label="Écrans de Taskflows">
+                <button type="button" data-shot aria-pressed="true">Vue d'ensemble</button>
+                <button type="button" data-shot aria-pressed="false">Production</button>
+                <button type="button" data-shot aria-pressed="false">Pilotage</button>
               </div>
-              <span class="float-chip float-chip--1">Laravel API</span>
-              <span class="float-chip float-chip--2">React Native</span>
-              <span class="float-chip float-chip--3">Flutter</span>
             </div>
-            <div class="project__body">
-              <div class="project__meta"><span>Aylmara</span><span>Web · Mobile</span></div>
-              <h3>Aylmara TaskFlows</h3>
-              <p>Plateforme de gestion des tâches et des flux de travail&nbsp;: une API Laravel côté serveur et des applications mobiles en React Native et Flutter pour suivre les projets où que l'on soit.</p>
-              <ul class="project__list">
-                <li>Back-end et API REST avec Laravel (PHP).</li>
-                <li>Applications mobiles multiplateformes en React Native et Flutter (Dart).</li>
-                <li>Suivi des tâches, des statuts et des flux de travail des équipes.</li>
+            <div class="case__body reveal">
+              <div class="project__meta"><span>Aylmara · 2026</span><span>Web · Responsive</span></div>
+              <h3>Aylmara Taskflows</h3>
+              <p class="case__lead">Outil de suivi de production des campagnes d'Aylmara, pour l'équipe et son client&nbsp;: de la tâche à la livraison, avec validations, planning et pilotage.</p>
+              <ul class="case__facts">
+                <li><b>4</b><span>espaces, droits vérifiés par le serveur</span></li>
+                <li><b>7</b><span>thèmes, clair et sombre</span></li>
+                <li><b>103</b><span>tests automatisés</span></li>
               </ul>
-              <ul class="tags"><li>Laravel</li><li>PHP</li><li>React Native</li><li>Flutter</li><li>Dart</li><li>API REST</li></ul>
+              <ul class="project__list">
+                <li>Espaces administration, responsable, production et client&nbsp;: le client ne voit jamais les données internes.</li>
+                <li>Parcours de validation des tâches, tableau Kanban, planning d'équipe par glisser-déposer et congés.</li>
+                <li>Pilotage par période, vue globale par marque, import du tableau Excel hebdomadaire et exports.</li>
+                <li>Assistant métier et IA (Gemini) limité aux données de chaque rôle, sauvegardes quotidiennes.</li>
+              </ul>
+              <ul class="tags"><li>Laravel 12</li><li>PHP</li><li>React</li><li>MySQL</li><li>Vite</li><li>PHPUnit</li><li>Playwright</li></ul>
             </div>
           </article>
 
+          <!-- ParkMe : captures réelles sur données de démonstration -->
+          <article class="case case--flip" data-case style="--case: #ffc814">
+            <div class="case__visual">
+              <div class="case__stage reveal-img">
+                <figure class="browser">
+                  <div class="browser__bar" aria-hidden="true">
+                    <span class="browser__dots"><i></i><i></i><i></i></span>
+                    <span class="browser__url" data-case-url>parkme · explorer</span>
+                  </div>
+                  <div class="browser__screen">
+                    <img class="is-active" src="assets/img/projects/parkme-explore.webp" data-url="parkme · explorer" alt="ParkMe sur ordinateur : liste des parkings et carte de Madagascar avec les prix" width="1440" height="900" loading="lazy" decoding="async">
+                    <img src="assets/img/projects/parkme-admin.webp" data-url="parkme · administration" alt="ParkMe : tableau de bord administrateur avec revenus, occupation et moyens de paiement" width="1440" height="900" loading="lazy" decoding="async">
+                  </div>
+                </figure>
+                <figure class="iphone iphone--home-bar" style="--screen: #f4f3ec">
+                  <div class="iphone__screen">
+                    <span class="iphone__status" aria-hidden="true"><b>9:41</b><i></i><svg viewBox="0 0 76 13"><rect x="0" y="8" width="3" height="4" rx="1"/><rect x="4.7" y="5.5" width="3" height="6.5" rx="1"/><rect x="9.4" y="3" width="3" height="9" rx="1"/><rect x="14.1" y="0.5" width="3" height="11.5" rx="1"/><path class="w" d="M24.6 4.6a10.6 10.6 0 0 1 14.8 0M27.5 7.6a6.4 6.4 0 0 1 9 0"/><path d="M32 12.2 29.7 9.9a3.3 3.3 0 0 1 4.6 0Z"/><rect class="b" x="48.5" y="0.7" width="23.5" height="11.6" rx="3.6"/><rect x="50.5" y="2.7" width="19.5" height="7.6" rx="2"/><rect class="c" x="73.4" y="4.4" width="1.7" height="4.2" rx="0.85"/></svg></span>
+                    <span class="iphone__island" aria-hidden="true"></span>
+                    <img src="assets/img/projects/parkme-mobile.webp" alt="ParkMe sur téléphone : recherche de parkings avec les places libres en direct" width="600" height="1161" loading="lazy" decoding="async">
+                    <span class="iphone__home" aria-hidden="true"></span>
+                  </div>
+                </figure>
+                <span class="case__note">Captures réelles · données de démo</span>
+              </div>
+              <div class="case__switch" role="group" aria-label="Écrans de ParkMe">
+                <button type="button" data-shot aria-pressed="true">Explorer</button>
+                <button type="button" data-shot aria-pressed="false">Administration</button>
+              </div>
+            </div>
+            <div class="case__body reveal">
+              <div class="project__meta"><span>2026</span><span>iOS · Android · Web</span></div>
+              <h3>ParkMe</h3>
+              <p class="case__lead">Réservation de places de parking à Madagascar&nbsp;: un seul code Expo pour iOS, Android et le web, une API temps réel et trois espaces (membre, gardien, administration).</p>
+              <ul class="case__facts">
+                <li><b>3</b><span>plateformes, un seul code</span></li>
+                <li><b>14</b><span>villes dans la démo</span></li>
+                <li><b>290</b><span>contrôles automatisés</span></li>
+              </ul>
+              <ul class="project__list">
+                <li>Carte aux couleurs de ParkMe (MapLibre, OpenStreetMap), itinéraire intégré et places libres en direct.</li>
+                <li>Réservation en 4 étapes avec plan des places, Mobile Money simulé (MVola, Orange Money, Airtel) et ticket QR code.</li>
+                <li>Scanner QR pour les gardiens, tableau de bord administrateur&nbsp;: revenus, occupation, réservations.</li>
+                <li>PostgreSQL empêche toute double réservation&nbsp;; intégration continue avec GitHub Actions.</li>
+              </ul>
+              <ul class="tags"><li>Expo</li><li>React Native</li><li>TypeScript</li><li>Node.js</li><li>PostgreSQL</li><li>Prisma</li><li>Socket.IO</li></ul>
+            </div>
+          </article>
+        </div>
+
+        <p class="label cases__more reveal"><b>+</b><i></i>Autres projets</p>
+
+        <div class="bento">
           <!-- SecurIT -->
           <article class="project reveal">
             <div class="project__visual reveal-img" aria-hidden="true">
@@ -571,29 +634,8 @@
             </div>
           </article>
 
-          <!-- ParkMe -->
-          <article class="project reveal" style="--d:.1s">
-            <div class="project__visual project__visual--map reveal-img" aria-hidden="true">
-              <span class="road road--h"></span><span class="road road--v"></span><span class="road road--d"></span>
-              <i class="pin" style="--x:28%;--y:34%">P</i>
-              <i class="pin pin--active" style="--x:58%;--y:58%">P</i>
-              <i class="pin" style="--x:78%;--y:26%">P</i>
-            </div>
-            <div class="project__body">
-              <div class="project__meta"><span>2024</span><span>Réservation</span></div>
-              <h3>ParkMe</h3>
-              <p>Plateforme de réservation de places de parking à Madagascar, avec géolocalisation des emplacements disponibles.</p>
-              <ul class="project__list">
-                <li>Intégration de Google Maps pour localiser les parkings.</li>
-                <li>Parcours&nbsp;: recherche, filtres et confirmation.</li>
-                <li>Gestion des places et réservation en temps réel.</li>
-              </ul>
-              <ul class="tags"><li>Google Maps</li><li>Géolocalisation</li><li>Temps réel</li></ul>
-            </div>
-          </article>
-
           <!-- Hackathon -->
-          <article class="project reveal" style="--d:.2s">
+          <article class="project reveal" style="--d:.1s">
             <div class="project__visual project__visual--screens reveal-img" aria-hidden="true">
               <span class="screen screen--1"></span>
               <span class="screen screen--2"><svg viewBox="0 0 24 24"><path d="M12 7a2 2 0 1 1 2-2M12 7v2l8.5 6.2a1.5 1.5 0 0 1-.9 2.8H4.4a1.5 1.5 0 0 1-.9-2.8L12 9" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
@@ -767,6 +809,43 @@
     </div>
   </footer>
 
-  <script src="js/main.js?v=20261103b" defer></script>
+  <!-- Assistant : questions sur Juan. data-endpoint = adresse du Worker Gemini (voir assistant/README.md) ;
+       vide, la bulle répond avec ses réponses préparées. -->
+  <div class="ai" data-assistant data-endpoint="">
+    <p class="ai__teaser" hidden>
+      <span>Une question sur Juan ? <b>Son assistant vous répond.</b></span>
+      <button type="button" aria-label="Masquer l'invitation"><svg class="ico" viewBox="0 0 24 24"><path d="M7 7l10 10M17 7 7 17" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg></button>
+    </p>
+    <section class="ai__panel" id="ai-panel" role="dialog" aria-labelledby="ai-title" hidden>
+      <header class="ai__head">
+        <span class="ai__avatar" aria-hidden="true"><svg><use href="#logo"/></svg></span>
+        <div class="ai__who">
+          <p class="ai__title" id="ai-title">Assistant de Juan</p>
+          <p class="ai__status" data-ai-status>Réponses instantanées</p>
+        </div>
+        <button type="button" class="ai__close" aria-label="Fermer l'assistant"><svg class="ico" viewBox="0 0 24 24"><path d="M7 7l10 10M17 7 7 17" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg></button>
+      </header>
+      <div class="ai__log" role="log" aria-live="polite"></div>
+      <div class="ai__chips">
+        <button type="button">Quelles sont ses compétences ?</button>
+        <button type="button">Parle-moi de ParkMe</button>
+        <button type="button">Est-il disponible en freelance ?</button>
+        <button type="button">Comment le contacter ?</button>
+      </div>
+      <form class="ai__form">
+        <label class="ai__label" for="ai-input">Votre question</label>
+        <textarea class="ai__input" id="ai-input" rows="1" maxlength="500" placeholder="Posez votre question…" autocomplete="off"></textarea>
+        <button type="submit" class="ai__send" aria-label="Envoyer"><svg class="ico"><use href="#i-arrow-up"/></svg></button>
+      </form>
+      <p class="ai__foot" data-ai-foot></p>
+    </section>
+    <button type="button" class="ai__launcher" aria-expanded="false" aria-controls="ai-panel" aria-label="Ouvrir l'assistant">
+      <svg class="ai__logo" aria-hidden="true"><use href="#logo"/></svg>
+      <svg class="ai__x" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 7l10 10M17 7 7 17" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+    </button>
+  </div>
+
+  <script src="js/main.js?v=20261116" defer></script>
+  <script src="js/assistant.js?v=20261116" defer></script>
 </body>
 </html>
