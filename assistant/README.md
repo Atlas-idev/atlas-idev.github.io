@@ -9,19 +9,22 @@ La clé Gemini ne doit jamais être écrite dans le site : il est public sur Git
 
 ## Mettre en ligne l'assistant IA
 
-Prérequis : Node.js et un compte Cloudflare gratuit.
+Le relais est déployé sur `https://portfolio-assistant.atlas-idev.workers.dev` et cette adresse est déjà configurée dans `index.html`.
+
+Pour le mettre à jour, avec Node.js et le compte Cloudflare connecté :
 
 ```bash
 cd assistant
-npx wrangler login                      # ouvre le navigateur pour se connecter à Cloudflare
-npx wrangler secret put GEMINI_API_KEY  # collez la clé Gemini (https://aistudio.google.com/apikey)
-npx wrangler deploy                     # affiche l'adresse du Worker, ex. https://portfolio-assistant.<compte>.workers.dev
+npx wrangler login                                      # seulement si la session a expiré
+npx wrangler deploy --secrets-file .dev.vars --strict    # publie le relais et son secret
 ```
 
-Puis, dans `index.html`, renseignez cette adresse sur la bulle :
+La clé locale se trouve dans `assistant/.dev.vars`, exclu de Git. Pour changer de clé, mettez à jour `GEMINI_API_KEY` dans ce fichier puis relancez le déploiement. La clé est envoyée au stockage des secrets Cloudflare, jamais au site public.
+
+Si l'adresse du relais change, mettez à jour la bulle dans `index.html` :
 
 ```html
-<div class="ai" data-assistant data-endpoint="https://portfolio-assistant.<compte>.workers.dev">
+<div class="ai" data-assistant data-endpoint="https://portfolio-assistant.atlas-idev.workers.dev">
 ```
 
 ## Réglages
