@@ -15,8 +15,6 @@
   const input = box.querySelector(".ai__input");
   const send = box.querySelector(".ai__send");
   const chips = box.querySelector(".ai__chips");
-  const status = box.querySelector("[data-ai-status]");
-  const foot = box.querySelector("[data-ai-foot]");
   const teaser = box.querySelector(".ai__teaser");
   const STORE = "jh-assistant";
   const WELCOME = "Bonjour ! Je suis l'assistant de Juan. Posez-moi vos questions sur son parcours, ses compétences, ses projets ou sa disponibilité.";
@@ -106,14 +104,6 @@
   const save = () => {
     try { sessionStorage.setItem(STORE, JSON.stringify(history.slice(-30))); } catch (e) { /* navigation privée */ }
   };
-  const setOnline = (on) => {
-    online = on;
-    status.textContent = on ? "IA Gemini · en ligne" : "Réponses instantanées";
-    status.classList.toggle("is-ai", on);
-    foot.textContent = on
-      ? "Réponses générées par l'IA à partir du profil de Juan."
-      : `Pour un échange direct : ${MAIL}`;
-  };
 
   const askAI = async () => {
     const controller = new AbortController();
@@ -152,7 +142,7 @@
 
     let reply;
     if (online) {
-      try { reply = await askAI(); } catch (e) { setOnline(false); }
+      try { reply = await askAI(); } catch (e) { online = false; }
     } else {
       await new Promise((r) => setTimeout(r, 450));
     }
@@ -212,7 +202,6 @@
   if (!seen) setTimeout(() => { if (panel.hidden) teaser.hidden = false; }, 9000);
 
   /* Conversation reprise pendant la visite */
-  setOnline(online);
   try { history = JSON.parse(sessionStorage.getItem(STORE) || "[]"); } catch (e) { history = []; }
   bubble("assistant", WELCOME);
   history.forEach((m) => bubble(m.role, m.text));
